@@ -4,6 +4,8 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CitizensAdvice.Models;
+using CitizensAdvice.ViewModels;
 using Xamarin.Forms;
 
 namespace CitizensAdvice
@@ -16,6 +18,14 @@ namespace CitizensAdvice
         public MainPage()
         {
             InitializeComponent();
+            BindingContext = new MainPageViewModel();
+        }
+
+        private void ListView_OnItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            var vm = BindingContext as MainPageViewModel;
+            var area = e.Item as AdviceArea;
+            vm.HideOrShowDropdown(area);
         }
     }
 }

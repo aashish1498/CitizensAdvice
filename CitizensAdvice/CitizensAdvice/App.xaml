@@ -6,6 +6,15 @@
              mc:Ignorable="d"
              x:Class="CitizensAdvice.App">
     <Application.Resources>
+        <!-- Colours -->
+        <Color x:Key="PrimaryColor">#004B88</Color>
 
+        <!--Styles-->
+        <Style TargetType="{x:Type Button}" >
+            <Setter Property="BackgroundColor"
+                    Value="{StaticResource PrimaryColor}" /> 
+            <Setter Property="TextColor"
+                    Value="White" />
+        </Style>
     </Application.Resources>
 </Application>
