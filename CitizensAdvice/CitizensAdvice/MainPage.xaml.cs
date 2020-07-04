@@ -27,5 +27,13 @@ namespace CitizensAdvice
             var area = e.Item as AdviceArea;
             vm.HideOrShowDropdown(area);
         }
+
+        private void OnlineAdviceClicked(object sender, EventArgs e)
+        {
+            var button = sender as Button;
+            var area = button?.BindingContext as AdviceArea;
+            var vm = BindingContext as MainPageViewModel;
+            vm?.VisitWebsite.Execute(area);
+        }
     }
 }

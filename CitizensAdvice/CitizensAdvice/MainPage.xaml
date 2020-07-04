@@ -23,8 +23,8 @@
                                                 <ColumnDefinition />
                                                 <ColumnDefinition />
                                             </Grid.ColumnDefinitions>
-                                            <Button Grid.Column="0" Text="Find an agency" />
-                                            <Button Grid.Column="1" Text="Online advice" />
+                                            <Button Grid.Column="0" Text="Find an agency"/>
+                                        <Button Grid.Column="1" Text="Online advice" Clicked="OnlineAdviceClicked" />
                                         </Grid>
                                 </StackLayout>
                             </Frame>

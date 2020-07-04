@@ -6,6 +6,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using CitizensAdvice.Annotations;
 using CitizensAdvice.Models;
+using Xamarin.Forms;
 
 namespace CitizensAdvice.ViewModels
 {
@@ -28,26 +29,22 @@ namespace CitizensAdvice.ViewModels
         public ObservableCollection<AdviceArea> AdviceAreas { get; set; }
         public MainPageViewModel()
         {
-            List<string> adviceAreaNames = new List<string>()
+            var urlPrefix = "www.citizensadvice.org.uk/";
+
+            AdviceAreas = new ObservableCollection<AdviceArea>()
             {
-                "Benefits",
-                "Consumer",
-                "Debt and Money",
-                "Education",
-                "Family",
-                "Hate Crime",
-                "Health",
-                "Housing",
-                "Immigration",
-                "Law and Courts",
-                "Work"
+                new AdviceArea("Benefits", "benefits", false),
+                new AdviceArea("Consumer", "consumer", false),
+                new AdviceArea("Debt and Money", "debt-and-money", false),
+                new AdviceArea("Education", "family/education", false),
+                new AdviceArea("Family", "family", false),
+                new AdviceArea("Hate Crime", "law-and-courts/discrimination/hate-crime", false),
+                new AdviceArea("Health", "health", false),
+                new AdviceArea("Housing", "housing", false),
+                new AdviceArea("Immigration", "immigration", false),
+                new AdviceArea("Law and Courts", "law-and-courts", false),
+                new AdviceArea("Work", "work", false)
             };
-            adviceAreaNames.Sort();
-            AdviceAreas = new ObservableCollection<AdviceArea>();
-            foreach (var name in adviceAreaNames)
-            {
-                AdviceAreas.Add(new AdviceArea(name));
-            }
         }
 
         public void HideOrShowDropdown(AdviceArea area)
@@ -75,9 +72,22 @@ namespace CitizensAdvice.ViewModels
 
         private void UpdateAreas(AdviceArea area)
         {
+            // Consider disabling automatic update here
             var index = AdviceAreas.IndexOf(area);
             AdviceAreas.Remove(area);
             AdviceAreas.Insert(index, area);
         }
+
+        public Command<AdviceArea> VisitWebsite
+        {
+            get
+            {
+                return new Command<AdviceArea>(async area =>
+                {
+                    await Application.Current.MainPage.Navigation.PushAsync(new WebViewPage(area));
+                });
+            }
+        }
+
     }
 }
