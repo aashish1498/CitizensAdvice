@@ -8,6 +8,7 @@
     <Application.Resources>
         <!-- Colours -->
         <Color x:Key="PrimaryColor">#004B88</Color>
+        <Color x:Key="BackgroundColor">#B5AFD7</Color>
 
         <!--Styles-->
         <Style TargetType="{x:Type Button}" >

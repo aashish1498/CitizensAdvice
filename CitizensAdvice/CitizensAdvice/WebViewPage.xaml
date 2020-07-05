@@ -8,6 +8,7 @@
     <ContentPage.Content>
 
         <StackLayout>
+            <WebView x:Name="WebView1"  Source="{Binding Url}" HeightRequest="1000" WidthRequest="1000" Navigated="WebView1_OnNavigated"/>
             <Grid Margin="10" VerticalOptions="StartAndExpand">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition />
@@ -16,7 +17,6 @@
                 <Button Grid.Column="0" Text="Back" HeightRequest ="80" Command="{Binding GoBackCommand}"/>
                 <Button Grid.Column="1" Text="Forward" HeightRequest="80" Command="{Binding GoForwardCommand}" />
             </Grid>
-            <WebView x:Name="WebView1"  Source="{Binding Url}" HeightRequest="1000" WidthRequest="1000" Navigated="WebView1_OnNavigated"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

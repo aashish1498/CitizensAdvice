@@ -4,9 +4,16 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="CitizensAdvice.MainPage">
+             x:Class="CitizensAdvice.MainPage"
+             NavigationPage.HasNavigationBar="false">
 
     <StackLayout>
+        <Label Text="IMAGE" HorizontalOptions="Start"/>
+        <Label Text="Select a help topic below"
+               TextColor="{StaticResource PrimaryColor}"
+               FontSize="Large"
+               HorizontalOptions="CenterAndExpand"
+               Margin="50, 20"/>
         <ListView ItemsSource="{Binding AdviceAreas}" SeparatorVisibility="None" HasUnevenRows="True" ItemTapped="ListView_OnItemTapped">
             <ListView.ItemTemplate>
                 <DataTemplate>

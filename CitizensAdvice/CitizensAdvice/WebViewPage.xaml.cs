@@ -17,7 +17,9 @@ namespace CitizensAdvice
         {
             InitializeComponent();
             BindingContext = new WebViewPageViewModel(area);
-
+            Title = area.AreaName + " Web Info";
+            ((NavigationPage)Application.Current.MainPage).BarBackgroundColor = (Color) Application.Current.Resources["PrimaryColor"];
+            ((NavigationPage)Application.Current.MainPage).BarTextColor = Color.White;
         }
 
         private void WebView1_OnNavigated(object sender, WebNavigatedEventArgs e)
