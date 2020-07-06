@@ -25,14 +25,14 @@
                                            TextColor="{StaticResource PrimaryColor}"
                                            HorizontalOptions="CenterAndExpand"
                                            FontSize="Large"></Label>
-                                        <Grid IsVisible="{Binding IsDropdownVisible}" Margin="0, 10">
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition />
-                                                <ColumnDefinition />
-                                            </Grid.ColumnDefinitions>
-                                            <Button Grid.Column="0" Text="Find an agency"/>
+                                    <Grid IsVisible="{Binding IsDropdownVisible}" Margin="0, 10">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition />
+                                            <ColumnDefinition />
+                                        </Grid.ColumnDefinitions>
+                                        <Button Grid.Column="0" Text="Find an agency" Clicked="FindAgencyClicked"/>
                                         <Button Grid.Column="1" Text="Online advice" Clicked="OnlineAdviceClicked" />
-                                        </Grid>
+                                    </Grid>
                                 </StackLayout>
                             </Frame>
                         </ViewCell.View>

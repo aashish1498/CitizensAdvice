@@ -35,5 +35,13 @@ namespace CitizensAdvice
             var vm = BindingContext as MainPageViewModel;
             vm?.VisitWebsite.Execute(area);
         }
+
+        private void FindAgencyClicked(object sender, EventArgs e)
+        {
+            var button = sender as Button;
+            var area = button?.BindingContext as AdviceArea;
+            var vm = BindingContext as MainPageViewModel;
+            vm?.FindAgency.Execute(area);
+        }
     }
 }

@@ -74,5 +74,17 @@ namespace CitizensAdvice.ViewModels
             }
         }
 
+        public Command<AdviceArea> FindAgency
+        {
+            get
+            {
+                return new Command<AdviceArea>(async area =>
+                {
+                    await Application.Current.MainPage.Navigation.PushAsync(new AgenciesPage(area));
+
+                });
+            }
+        }
+
     }
 }
