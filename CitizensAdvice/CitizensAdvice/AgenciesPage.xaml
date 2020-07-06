@@ -8,18 +8,5 @@
              x:Class="CitizensAdvice.AgenciesPage">
     <ContentPage.Content>
         <ContentView Content="{Binding Map}"></ContentView>
-        <!--<StackLayout>
-            <Grid>
-                <maps:Map x:Name="MyMap" MapType="Street" HasZoomEnabled="True" HeightRequest="1000" WidthRequest="1000" ItemsSource="{Binding PlacesList}">
-                    <maps:Map.ItemTemplate>
-                        <DataTemplate>
-                            <maps:Pin Position="{Binding Position}"
-                                  Address="{Binding Address}"
-                                  Label="{Binding Label}" />
-                        </DataTemplate>
-                    </maps:Map.ItemTemplate>
-                </maps:Map>
-            </Grid>
-        </StackLayout>-->
     </ContentPage.Content>
 </ContentPage>

@@ -22,13 +22,6 @@ namespace CitizensAdvice
             Title = area.AreaName + " agencies";
             ((NavigationPage)Application.Current.MainPage).BarBackgroundColor = (Color)Application.Current.Resources["PrimaryColor"];
             ((NavigationPage)Application.Current.MainPage).BarTextColor = Color.White;
-            //MoveMapToCurrentLocation();
         }
-
-        //async void MoveMapToCurrentLocation()
-        //{
-        //    var location = await Geolocation.GetLastKnownLocationAsync();
-        //    MyMap.MoveToRegion(MapSpan.FromCenterAndRadius(new Position(location.Latitude, location.Longitude), Distance.FromMiles(1) ));
-        //}
     }
 }
