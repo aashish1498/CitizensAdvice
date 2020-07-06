@@ -12,7 +12,7 @@ namespace CitizensAdvice.Models
 
         public AdviceArea(string name, string areaUrl, bool containsPrefix)
         {
-            const string urlPrefix = "https://www.citizensadvice.org.uk/";
+            
             AreaName = name;
             if (containsPrefix)
             {
@@ -20,7 +20,7 @@ namespace CitizensAdvice.Models
             }
             else
             {
-                AreaUrl = urlPrefix + areaUrl;
+                AreaUrl = Database.UrlPrefix + areaUrl;
             }
             
         }

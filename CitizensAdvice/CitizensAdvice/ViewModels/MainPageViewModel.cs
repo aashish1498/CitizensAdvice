@@ -29,22 +29,7 @@ namespace CitizensAdvice.ViewModels
         public ObservableCollection<AdviceArea> AdviceAreas { get; set; }
         public MainPageViewModel()
         {
-            var urlPrefix = "www.citizensadvice.org.uk/";
-
-            AdviceAreas = new ObservableCollection<AdviceArea>()
-            {
-                new AdviceArea("Benefits", "benefits", false),
-                new AdviceArea("Consumer", "consumer", false),
-                new AdviceArea("Debt and Money", "debt-and-money", false),
-                new AdviceArea("Education", "family/education", false),
-                new AdviceArea("Family", "family", false),
-                new AdviceArea("Hate Crime", "law-and-courts/discrimination/hate-crime", false),
-                new AdviceArea("Health", "health", false),
-                new AdviceArea("Housing", "housing", false),
-                new AdviceArea("Immigration", "immigration", false),
-                new AdviceArea("Law and Courts", "law-and-courts", false),
-                new AdviceArea("Work", "work", false)
-            };
+            AdviceAreas = Database.AdviceAreas;
         }
 
         public void HideOrShowDropdown(AdviceArea area)
