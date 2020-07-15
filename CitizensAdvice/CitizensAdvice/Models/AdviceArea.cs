@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 
 namespace CitizensAdvice.Models
@@ -10,9 +11,9 @@ namespace CitizensAdvice.Models
         public string AreaUrl { get; set; }
         public bool IsDropdownVisible { get; set; }
 
+        public ObservableCollection<Place> places { get; set; }
         public AdviceArea(string name, string areaUrl, bool containsPrefix)
         {
-            
             AreaName = name;
             if (containsPrefix)
             {
@@ -22,6 +23,11 @@ namespace CitizensAdvice.Models
             {
                 AreaUrl = Database.UrlPrefix + areaUrl;
             }
+
+            places = new ObservableCollection<Place>
+            {
+                Database.DefaultPlace
+            };
             
         }
     }

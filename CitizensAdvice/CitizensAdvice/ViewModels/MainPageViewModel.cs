@@ -30,6 +30,7 @@ namespace CitizensAdvice.ViewModels
         public MainPageViewModel()
         {
             AdviceAreas = Database.AdviceAreas;
+            // TODO add more agency places to each area here
         }
 
         public void HideOrShowDropdown(AdviceArea area)
@@ -80,7 +81,7 @@ namespace CitizensAdvice.ViewModels
             {
                 return new Command<AdviceArea>(async area =>
                 {
-                    await Application.Current.MainPage.Navigation.PushAsync(new AgenciesPage(area));
+                    await Application.Current.MainPage.Navigation.PushAsync(new AgenciesListPage(area));
 
                 });
             }

@@ -3,11 +3,22 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
 using CitizensAdvice.Models;
+using Xamarin.Forms.Maps;
 
 namespace CitizensAdvice
 {
     public static class Database
     {
+        public static string UrlPrefix = "https://www.citizensadvice.org.uk/";
+
+        public static Position DefaultPosition = new Position(51.558010, 0.075367); // Ilford Library
+        
+        public static Place DefaultPlace = new Place(
+            DefaultPosition,
+            "Central Library, Clements Rd, Ilford IG1 1EA",
+            "Citizens Advice Redbridge"
+            );
+
         public static ObservableCollection<AdviceArea> AdviceAreas = new ObservableCollection<AdviceArea>()
         {
             new AdviceArea("Benefits", "benefits", false),
@@ -23,6 +34,5 @@ namespace CitizensAdvice
             new AdviceArea("Work", "work", false)
         };
 
-        public static string UrlPrefix = "https://www.citizensadvice.org.uk/";
     }
 }

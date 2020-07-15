@@ -7,6 +7,15 @@
              mc:Ignorable="d"
              x:Class="CitizensAdvice.AgenciesPage">
     <ContentPage.Content>
-        <ContentView Content="{Binding Map}"></ContentView>
+        <StackLayout>
+            <Label
+                Text="Select a pin for more details"
+                TextColor="{StaticResource PrimaryColor}"
+                FontSize="Large"
+                HorizontalOptions="CenterAndExpand"
+                Margin="20, 10">
+            </Label>
+            <ContentView Content="{Binding Map}" WidthRequest="1000" HeightRequest="1000"></ContentView>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

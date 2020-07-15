@@ -5,7 +5,7 @@ using Xamarin.Forms.Maps;
 
 namespace CitizensAdvice.Models
 {
-    class Place
+    public class Place
     {
         public Position Position { get; }
         public string Address { get; }
