@@ -1,16 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CitizensAdvice.Models;
+﻿using CitizensAdvice.Models;
 using CitizensAdvice.ViewModels;
-using Xamarin.Essentials;
 using Xamarin.Forms;
-using Xamarin.Forms.Maps;
 using Xamarin.Forms.Xaml;
 
-namespace CitizensAdvice
+namespace CitizensAdvice.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AgenciesPage : ContentPage
@@ -18,7 +11,7 @@ namespace CitizensAdvice
         public AgenciesPage(AdviceArea area)
         {
             InitializeComponent();
-            BindingContext = new AgenciesPageViewModel(area);
+            BindingContext = new AgenciesViewModel(area);
             Title = area.AreaName + " agencies";
             ((NavigationPage)Application.Current.MainPage).BarBackgroundColor = (Color)Application.Current.Resources["PrimaryColor"];
             ((NavigationPage)Application.Current.MainPage).BarTextColor = Color.White;

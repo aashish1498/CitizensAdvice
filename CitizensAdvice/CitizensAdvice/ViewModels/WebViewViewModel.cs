@@ -8,14 +8,14 @@ using Xamarin.Forms;
 
 namespace CitizensAdvice.ViewModels
 {
-    class WebViewPageViewModel
+    class WebViewViewModel
     {
         public AdviceArea Area { get; }
         public string Url { get; set; }
         public WebView MyWebView;
         public Command GoBackCommand { get; set; }
         public Command GoForwardCommand { get; set; }
-        public WebViewPageViewModel(AdviceArea area)
+        public WebViewViewModel(AdviceArea area)
         {
             GoBackCommand = new Command(GoBack);
             GoForwardCommand = new Command(GoForward);

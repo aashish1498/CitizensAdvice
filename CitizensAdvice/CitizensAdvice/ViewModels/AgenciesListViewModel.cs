@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
 using CitizensAdvice.Models;
+using CitizensAdvice.Views;
 using Xamarin.Forms;
 
 namespace CitizensAdvice.ViewModels

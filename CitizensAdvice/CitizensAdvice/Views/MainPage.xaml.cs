@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using CitizensAdvice.Models;
 using CitizensAdvice.ViewModels;
 using Xamarin.Forms;
 
-namespace CitizensAdvice
+namespace CitizensAdvice.Views
 {
     // Learn more about making custom code visible in the Xamarin.Forms previewer
     // by visiting https://aka.ms/xamarinforms-previewer
@@ -18,12 +14,12 @@ namespace CitizensAdvice
         public MainPage()
         {
             InitializeComponent();
-            BindingContext = new MainPageViewModel();
+            BindingContext = new MainViewModel();
         }
 
         private void ListView_OnItemTapped(object sender, ItemTappedEventArgs e)
         {
-            var vm = BindingContext as MainPageViewModel;
+            var vm = BindingContext as MainViewModel;
             var area = e.Item as AdviceArea;
             vm.HideOrShowDropdown(area);
         }
@@ -32,7 +28,7 @@ namespace CitizensAdvice
         {
             var button = sender as Button;
             var area = button?.BindingContext as AdviceArea;
-            var vm = BindingContext as MainPageViewModel;
+            var vm = BindingContext as MainViewModel;
             vm?.VisitWebsite.Execute(area);
         }
 
@@ -40,7 +36,7 @@ namespace CitizensAdvice
         {
             var button = sender as Button;
             var area = button?.BindingContext as AdviceArea;
-            var vm = BindingContext as MainPageViewModel;
+            var vm = BindingContext as MainViewModel;
             vm?.FindAgency.Execute(area);
         }
     }

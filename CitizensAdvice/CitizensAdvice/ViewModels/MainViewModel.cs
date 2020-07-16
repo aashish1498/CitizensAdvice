@@ -6,11 +6,12 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using CitizensAdvice.Annotations;
 using CitizensAdvice.Models;
+using CitizensAdvice.Views;
 using Xamarin.Forms;
 
 namespace CitizensAdvice.ViewModels
 {
-    class MainPageViewModel : INotifyPropertyChanged
+    class MainViewModel : INotifyPropertyChanged
     {
 
         #region Interface Implementation
@@ -27,7 +28,7 @@ namespace CitizensAdvice.ViewModels
         private AdviceArea _oldArea;
 
         public ObservableCollection<AdviceArea> AdviceAreas { get; set; }
-        public MainPageViewModel()
+        public MainViewModel()
         {
             AdviceAreas = Database.AdviceAreas;
             // TODO add more agency places to each area here

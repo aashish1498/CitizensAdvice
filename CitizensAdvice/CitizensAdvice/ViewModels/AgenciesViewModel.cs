@@ -10,13 +10,13 @@ using Map = Xamarin.Forms.Maps.Map;
 
 namespace CitizensAdvice.ViewModels
 {
-    class AgenciesPageViewModel
+    class AgenciesViewModel
     {
         public Map Map { get; set; }
         public AdviceArea Area { get; }
 
         public ObservableCollection<Place> Places;
-        public AgenciesPageViewModel(AdviceArea area)
+        public AgenciesViewModel(AdviceArea area)
         {
             Map = new Map();
             Area = area;
