@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Xamarin.Forms;
 using Xamarin.Forms.Maps;
 
 namespace CitizensAdvice.Models
@@ -10,12 +8,14 @@ namespace CitizensAdvice.Models
         public Position Position { get; }
         public string Address { get; }
         public string Label { get; }
-
-        public Place(Position position, string address, string label)
+        public ImageSource ImageSource { get; set; }
+        public Place(Position position, string address, string label, string imagePath)
         {
             Position = position;
             Address = address;
             Label = label;
+
+            ImageSource = ImageSource.FromResource(imagePath);
         }
     }
 }

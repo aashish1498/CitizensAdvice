@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Text;
+﻿using System.Collections.ObjectModel;
 using CitizensAdvice.Models;
 using Xamarin.Forms.Maps;
 
@@ -16,7 +13,8 @@ namespace CitizensAdvice
         public static Place DefaultPlace = new Place(
             DefaultPosition,
             "Central Library, Clements Rd, Ilford IG1 1EA",
-            "Citizens Advice Redbridge"
+            "Citizens Advice Redbridge",
+            "CitizensAdvice.Images.MainPageLogo.png"
             );
 
         public static ObservableCollection<AdviceArea> AdviceAreas = new ObservableCollection<AdviceArea>()

@@ -4,45 +4,49 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             xmlns:local="clr-namespace:CitizensAdvice;assembly=CitizensAdvice"
              x:Class="CitizensAdvice.Views.MainPage"
              NavigationPage.HasNavigationBar="false">
 
-    <StackLayout>
-        <Label Text="IMAGE" HorizontalOptions="Start"/>
-        <Label Text="Select a help topic below"
-               TextColor="{StaticResource PrimaryColor}"
-               FontSize="Large"
-               HorizontalOptions="CenterAndExpand"
-               Margin="50, 20"/>
-        <ListView ItemsSource="{Binding AdviceAreas}" SeparatorVisibility="None" HasUnevenRows="True" ItemTapped="ListView_OnItemTapped">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <ViewCell.View>
-                            <Frame BorderColor="{StaticResource PrimaryColor}" Margin="20" BackgroundColor="{StaticResource PrimaryColor}" Padding="1">
-                                <Frame BorderColor="{StaticResource PrimaryColor}" BackgroundColor="White" Margin="0" Padding="8">
-                                    <StackLayout>
-                                        <Label Text="{Binding AreaName}"
+    <ListView ItemsSource="{Binding AdviceAreas}" SeparatorVisibility="None" HasUnevenRows="True" ItemTapped="ListView_OnItemTapped">
+        <ListView.Header>
+            <StackLayout>
+                <Image x:Name="mainLogo"  Source="{local:ImageResource CitizensAdvice.Images.MainPageLogo.png}" Aspect="AspectFit" Margin="50, 20, 50, 0" AnchorX="0" AnchorY="0" HorizontalOptions="StartAndExpand" HeightRequest="150"></Image>
+                <Label Text="Select a help topic below"
+                       TextColor="{StaticResource PrimaryColor}"
+                       FontSize="Large"
+                       HorizontalOptions="CenterAndExpand"
+                       Margin="50, 20"/>
+            </StackLayout>
+        </ListView.Header>
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <ViewCell.View>
+                        <Frame BorderColor="{StaticResource PrimaryColor}" Margin="20" BackgroundColor="{StaticResource PrimaryColor}" Padding="1">
+                            <Frame BorderColor="{StaticResource PrimaryColor}" BackgroundColor="White" Margin="0" Padding="8">
+                                <StackLayout>
+                                    <Label Text="{Binding AreaName}"
                                            TextColor="{StaticResource PrimaryColor}"
                                            HorizontalOptions="CenterAndExpand"
                                            FontSize="Title" 
                                            FontAttributes="Bold"/>
-                                        <Grid IsVisible="{Binding IsDropdownVisible}" Margin="0, 10">
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition />
-                                                <ColumnDefinition />
-                                            </Grid.ColumnDefinitions>
-                                            <Button Grid.Column="0" Text="Find an agency" Clicked="FindAgencyClicked" CornerRadius="5"/>
-                                            <Button Grid.Column="1" Text="Online advice" Clicked="OnlineAdviceClicked" CornerRadius="5"/>
-                                        </Grid>
-                                    </StackLayout>
-                                </Frame>
+                                    <Grid IsVisible="{Binding IsDropdownVisible}" Margin="0, 10">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition />
+                                            <ColumnDefinition />
+                                        </Grid.ColumnDefinitions>
+                                        <Button Grid.Column="0" Text="Find an agency" Clicked="FindAgencyClicked" CornerRadius="5"/>
+                                        <Button Grid.Column="1" Text="Online advice" Clicked="OnlineAdviceClicked" CornerRadius="5"/>
+                                    </Grid>
+                                </StackLayout>
                             </Frame>
-                        </ViewCell.View>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-    </StackLayout>
+                        </Frame>
+                    </ViewCell.View>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+
 
 </ContentPage>

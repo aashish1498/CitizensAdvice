@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading;
-using CitizensAdvice.Models;
+﻿using CitizensAdvice.Models;
 
 namespace CitizensAdvice.ViewModels
 {

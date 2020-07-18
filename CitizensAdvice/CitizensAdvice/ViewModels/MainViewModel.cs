@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using CitizensAdvice.Annotations;
+using CitizensAdvice.Models;
+using CitizensAdvice.Views;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using System.Text;
-using CitizensAdvice.Annotations;
-using CitizensAdvice.Models;
-using CitizensAdvice.Views;
 using Xamarin.Forms;
 
 namespace CitizensAdvice.ViewModels
@@ -83,10 +80,8 @@ namespace CitizensAdvice.ViewModels
                 return new Command<AdviceArea>(async area =>
                 {
                     await Application.Current.MainPage.Navigation.PushAsync(new AgenciesListPage(area));
-
                 });
             }
         }
-
     }
 }

@@ -4,6 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             xmlns:local="clr-namespace:CitizensAdvice;assembly=CitizensAdvice"
              x:Class="CitizensAdvice.Views.AgenciesListPage">
     <ContentPage.Content>
         <StackLayout>
@@ -13,12 +14,22 @@
                     <DataTemplate>
                         <ViewCell>
                             <ViewCell.View>
-                                <Frame BorderColor="{StaticResource PrimaryColor}" Margin="20">
+                                <Frame BorderColor="{StaticResource PrimaryColor}" Margin="20" CornerRadius="0">
                                     <StackLayout>
-                                        <Label Text="{Binding Label}"
-                                               TextColor="{StaticResource PrimaryColor}"
-                                               HorizontalOptions="CenterAndExpand"
-                                               FontSize="Large"></Label>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="2*" />
+                                            </Grid.ColumnDefinitions>
+                                            <Image Source="{Binding ImageSource}" HeightRequest="50"/>
+                                            <Label Grid.Column="1" Text="{Binding Label}"
+                                                   TextColor="{StaticResource PrimaryColor}"
+                                                   HorizontalOptions="CenterAndExpand"
+                                                   FontSize="Large"
+                                                   HorizontalTextAlignment="Center"
+                                            />
+                                        </Grid>
+
                                     </StackLayout>
                                 </Frame>
                             </ViewCell.View>
