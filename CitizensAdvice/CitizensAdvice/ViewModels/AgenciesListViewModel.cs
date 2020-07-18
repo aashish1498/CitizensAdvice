@@ -20,7 +20,7 @@ namespace CitizensAdvice.ViewModels
         {
             ViewOnMapCommand = new Command(ViewOnMap);
             Area = area;
-            Places = area.places;
+            Places = area.Places;
         }
 
         private async void ViewOnMap()

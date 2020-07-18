@@ -4,12 +4,57 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             xmlns:local="clr-namespace:CitizensAdvice;assembly=CitizensAdvice"
              x:Class="CitizensAdvice.Views.AgencyDetailsPage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="{Binding Name}"
-                   HorizontalOptions="CenterAndExpand"
-                   FontSize="Large"/>
-        </StackLayout>
+        <ScrollView>
+            <StackLayout>
+                <Image Source="{Binding MyImageSource}" HeightRequest="100" Margin="20"/>
+                <ContentView Content="{Binding Map}" WidthRequest="200" HeightRequest="200"></ContentView>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Label Style="{StaticResource LabelDefaultText}" 
+                           Text="{Binding Address}"
+                           Margin="10, 20,0,0"
+                           WidthRequest="150"/>
+                    <Button Grid.Column="1" Text="Directions" Command="{Binding GetDirectionsCommand}" Margin="20" />
+                </Grid>
+
+                <Label Style="{StaticResource LabelDefaultText}" Margin="0, 0, 0, 20" TextDecorations="Underline" TextColor="DodgerBlue">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="{Binding Website}">
+                                <Span.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding WebsiteLaunchCommand}"></TapGestureRecognizer>
+                                </Span.GestureRecognizers>
+                            </Span>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <CollectionView ItemsSource="{Binding BranchOpeningTimes}" IsEnabled="False" Margin="0" HeightRequest="150">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Label Style="{StaticResource LabelDefaultText}"  Text="{Binding DayString}" TextColor="{Binding TextColor}"/>
+                                <Label Grid.Column="1" Style="{StaticResource LabelDefaultText}"  Text="{Binding TimesString}" TextColor="{Binding TextColor}"/>
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+                <Button Text="{Binding CallText}" Command="{Binding CallNumberCommand}" Margin="20, 20, 20, 0" />
+
+                <Button Text="Send an email" Command="{Binding SendEmailCommand}" Margin="20, 20, 20, 20"/>
+
+
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

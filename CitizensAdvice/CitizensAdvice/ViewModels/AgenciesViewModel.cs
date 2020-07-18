@@ -20,10 +20,10 @@ namespace CitizensAdvice.ViewModels
         {
             Map = new Map();
             Area = area;
-            Places = area.places;
+            Places = area.Places;
 
            //Map.ItemsSource = Places;
-            foreach (var place in area.places)
+            foreach (var place in area.Places)
             {
                 Map.Pins.Add(new Pin
                 {

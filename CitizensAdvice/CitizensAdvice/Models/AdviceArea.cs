@@ -10,8 +10,8 @@ namespace CitizensAdvice.Models
         public string AreaName { get; set; }
         public string AreaUrl { get; set; }
         public bool IsDropdownVisible { get; set; }
+        public ObservableCollection<Place> Places { get; set; }
 
-        public ObservableCollection<Place> places { get; set; }
         public AdviceArea(string name, string areaUrl, bool containsPrefix)
         {
             AreaName = name;
@@ -24,7 +24,7 @@ namespace CitizensAdvice.Models
                 AreaUrl = Database.UrlPrefix + areaUrl;
             }
 
-            places = new ObservableCollection<Place>
+            Places = new ObservableCollection<Place>
             {
                 Database.DefaultPlace
             };

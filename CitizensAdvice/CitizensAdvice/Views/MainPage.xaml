@@ -14,9 +14,9 @@
                 <Image x:Name="mainLogo"  Source="{local:ImageResource CitizensAdvice.Images.MainPageLogo.png}" Aspect="AspectFit" Margin="50, 20, 50, 0" AnchorX="0" AnchorY="0" HorizontalOptions="StartAndExpand" HeightRequest="150"></Image>
                 <Label Text="Select a help topic below"
                        TextColor="{StaticResource PrimaryColor}"
-                       FontSize="Large"
+                       FontSize="Title"
                        HorizontalOptions="CenterAndExpand"
-                       Margin="50, 20"/>
+                       Margin="20"/>
             </StackLayout>
         </ListView.Header>
         <ListView.ItemTemplate>
@@ -36,8 +36,8 @@
                                             <ColumnDefinition />
                                             <ColumnDefinition />
                                         </Grid.ColumnDefinitions>
-                                        <Button Grid.Column="0" Text="Find an agency" Clicked="FindAgencyClicked" CornerRadius="5"/>
-                                        <Button Grid.Column="1" Text="Online advice" Clicked="OnlineAdviceClicked" CornerRadius="5"/>
+                                        <Button Grid.Column="0" Text="Find an agency" Clicked="FindAgencyClicked" />
+                                        <Button Grid.Column="1" Text="Online advice" Clicked="OnlineAdviceClicked"/>
                                     </Grid>
                                 </StackLayout>
                             </Frame>

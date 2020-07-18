@@ -16,6 +16,8 @@
                     Value="{StaticResource PrimaryColor}" /> 
             <Setter Property="TextColor"
                     Value="White" />
+            <Setter Property="CornerRadius"
+                    Value="10" />
         </Style>
         <Style TargetType="{x:Type Frame}">
             <Setter Property="BorderColor"
@@ -23,7 +25,29 @@
             <Setter Property="Margin"
                     Value="20"/>
             <Setter Property="CornerRadius"
-                    Value="5" />
+                    Value="10" />
+        </Style>
+
+        <Style x:Key="LabelDefaultText" TargetType="{x:Type Label}">
+            <Setter Property="TextColor"
+                    Value="{StaticResource PrimaryColor}" />
+            <Setter Property="HorizontalTextAlignment"
+                    Value="Center"/>
+            <Setter Property="FontSize"
+                    Value="Body" />
+        </Style>
+
+        <Style x:Key="AlternativeButtonStyle"  TargetType="{x:Type Button}" >
+            <Setter Property="TextColor"
+                    Value="{StaticResource PrimaryColor}" />
+            <Setter Property="BackgroundColor"
+                    Value="White" />
+            <Setter Property="BorderColor"
+                    Value="{StaticResource PrimaryColor}" />
+            <Setter Property="CornerRadius"
+                    Value="10" />
+            <Setter Property="BorderWidth"
+                    Value="2" />
         </Style>
     </Application.Resources>
 </Application>
