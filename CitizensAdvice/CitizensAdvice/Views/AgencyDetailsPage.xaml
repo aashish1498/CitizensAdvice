@@ -10,19 +10,6 @@
         <ScrollView>
             <StackLayout>
                 <Image Source="{Binding MyImageSource}" HeightRequest="100" Margin="20"/>
-                <ContentView Content="{Binding Map}" WidthRequest="200" HeightRequest="200"></ContentView>
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="*" />
-                    </Grid.ColumnDefinitions>
-                    <Label Style="{StaticResource LabelDefaultText}" 
-                           Text="{Binding Address}"
-                           Margin="10, 20,0,0"
-                           WidthRequest="150"/>
-                    <Button Grid.Column="1" Text="Directions" Command="{Binding GetDirectionsCommand}" Margin="20" />
-                </Grid>
-
                 <Label Style="{StaticResource LabelDefaultText}" Margin="0, 0, 0, 20" TextDecorations="Underline" TextColor="DodgerBlue">
                     <Label.FormattedText>
                         <FormattedString>
@@ -34,7 +21,7 @@
                         </FormattedString>
                     </Label.FormattedText>
                 </Label>
-                <CollectionView ItemsSource="{Binding BranchOpeningTimes}" IsEnabled="False" Margin="0" HeightRequest="150">
+                <CollectionView ItemsSource="{Binding BranchOpeningTimes}" IsEnabled="False" Margin="0" HeightRequest="180">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
                             <Grid>
@@ -53,7 +40,9 @@
 
                 <Button Text="Send an email" Command="{Binding SendEmailCommand}" Margin="20, 20, 20, 20"/>
 
-
+                <Label Style="{StaticResource LabelDefaultText}" 
+                       Text="{Binding Address}"
+                       Margin="10, 20,0,0"/>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

@@ -8,7 +8,6 @@
              x:Class="CitizensAdvice.Views.AgenciesListPage">
     <ContentPage.Content>
         <StackLayout>
-            <Button Text="View all on a map" Command="{Binding ViewOnMapCommand}" Margin="10, 20"></Button>
             <ListView x:Name="AgenciesListView" ItemsSource="{Binding Places}" SeparatorVisibility="None" HasUnevenRows="True" ItemTapped="AgenciesListView_OnItemTapped">
                 <ListView.ItemTemplate>
                     <DataTemplate>

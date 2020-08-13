@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Text;
+﻿using System.Collections.ObjectModel;
 using CitizensAdvice.Models;
 using CitizensAdvice.Views;
 using Xamarin.Forms;
@@ -13,20 +10,14 @@ namespace CitizensAdvice.ViewModels
         public AdviceArea Area { get; }
 
         public ObservableCollection<Place> Places { get; set; }
-        public Command ViewOnMapCommand { get; }
 
 
         public AgenciesListViewModel(AdviceArea area)
         {
-            ViewOnMapCommand = new Command(ViewOnMap);
             Area = area;
             Places = area.Places;
         }
 
-        private async void ViewOnMap()
-        {
-            await Application.Current.MainPage.Navigation.PushAsync(new AgenciesPage(Area));
-        }
 
         public Command<Place> DisplayAgencyDetails
         {
