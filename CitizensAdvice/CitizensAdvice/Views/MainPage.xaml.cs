@@ -39,5 +39,11 @@ namespace CitizensAdvice.Views
             var vm = BindingContext as MainViewModel;
             vm?.FindAgency.Execute(area);
         }
+
+        private void SearchBarTextChanged(object sender, TextChangedEventArgs e)
+        {
+            var vm = BindingContext as MainViewModel;
+            if (sender is SearchBar searchBar) vm?.PerformSearch.Execute(searchBar.Text);
+        }
     }
 }

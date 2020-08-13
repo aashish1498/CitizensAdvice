@@ -1,35 +1,17 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Runtime.InteropServices.ComTypes;
 using CitizensAdvice.Models;
 using Xamarin.Forms.Maps;
+using static CitizensAdvice.StaticClasses.Keywords;
 
-namespace CitizensAdvice
+namespace CitizensAdvice.StaticClasses
 {
-    public static class Database
+    public static class Populator
     {
-        public static string UrlPrefix = "https://www.citizensadvice.org.uk/";
-
         public static Position DefaultPosition = new Position(51.558010, 0.075367); // Ilford Library
 
-        public static Place DefaultPlace = PopulateCitizensAdvicePlace();
-
-        public static ObservableCollection<AdviceArea> AdviceAreas = new ObservableCollection<AdviceArea>()
-        {
-            new AdviceArea("Benefits", "benefits", false),
-            new AdviceArea("Consumer", "consumer", false),
-            new AdviceArea("Debt and Money", "debt-and-money", false),
-            new AdviceArea("Education", "family/education", false),
-            new AdviceArea("Family", "family", false),
-            new AdviceArea("Hate Crime", "law-and-courts/discrimination/hate-crime", false),
-            new AdviceArea("Health", "health", false),
-            new AdviceArea("Housing", "housing", false),
-            new AdviceArea("Immigration", "immigration", false),
-            new AdviceArea("Law and Courts", "law-and-courts", false),
-            new AdviceArea("Work", "work", false)
-        };
-
-        static Place PopulateCitizensAdvicePlace()
+        public static Place PopulateCitizensAdvicePlace()
         {
             //TODO change this to actual email address
 
@@ -37,7 +19,7 @@ namespace CitizensAdvice
                 "03003309063",
                 "aashish.mehta@citizensadviceredbridge.org.uk",
                 "http://www.citizensadviceredbridge.org.uk/"
-                );
+            );
 
             var branchOpeningTimes = new ObservableCollection<OpeningTimes>
             {
@@ -65,5 +47,28 @@ namespace CitizensAdvice
             return place;
         }
 
+        public static ObservableCollection<AdviceArea> PopulateAdviceAreas()
+        {
+
+            //TODO change to a dictionary of strings to add URL (or something else idk I don't have a degree in computer science
+            
+
+            var adviceAreas = new ObservableCollection<AdviceArea>()
+            {
+                new AdviceArea("Benefits", "benefits", false, BenefitsKeywords),
+                new AdviceArea("Consumer", "consumer", false, ConsumerKeywords),
+                new AdviceArea("Debt and Money", "debt-and-money", false, DebtAndMoneyKeywords),
+                new AdviceArea("Education", "family/education", false, EducationKeywords),
+                new AdviceArea("Family", "family", false, FamilyKeywords),
+                new AdviceArea("Hate Crime", "law-and-courts/discrimination/hate-crime", false, HateCrimeKeywords),
+                new AdviceArea("Health", "health", false, HealthKeywords),
+                new AdviceArea("Housing", "housing", false, HousingKeywords),
+                new AdviceArea("Immigration", "immigration", false, ImmigrationKeywords),
+                new AdviceArea("Law and Courts", "law-and-courts", false, LawAndCourtsKeywords),
+                new AdviceArea("Work", "work", false, WorkKeywords)
+            };
+
+            return adviceAreas;
+        }
     }
 }

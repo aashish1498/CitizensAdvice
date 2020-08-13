@@ -12,6 +12,7 @@
         <ListView.Header>
             <StackLayout>
                 <Image x:Name="mainLogo"  Source="{local:ImageResource CitizensAdvice.Images.MainPageLogo.png}" Aspect="AspectFit" Margin="50, 20, 50, 0" AnchorX="0" AnchorY="0" HorizontalOptions="StartAndExpand" HeightRequest="150"></Image>
+                <SearchBar x:Name="SearchBar" Placeholder="Search for a keyword" SearchCommand="{Binding PerformSearch}" SearchCommandParameter="{Binding Text, Source={x:Reference SearchBar}}" TextChanged="SearchBarTextChanged"/>
                 <Label Text="Select a help topic below"
                        TextColor="{StaticResource PrimaryColor}"
                        FontSize="Title"
@@ -31,6 +32,10 @@
                                            HorizontalOptions="CenterAndExpand"
                                            FontSize="Title" 
                                            FontAttributes="Bold"/>
+                                    <Label FormattedText="{Binding KeywordFormatted}"
+                                           HorizontalOptions="CenterAndExpand"
+                                           Margin="10"
+                                           IsVisible="{Binding IsKeywordVisible}" />
                                     <Grid IsVisible="{Binding IsDropdownVisible}" Margin="0, 10">
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition />

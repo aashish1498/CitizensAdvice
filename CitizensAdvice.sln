@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CitizensAdvice.Android", "C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CitizensAdvice.iOS", "CitizensAdvice\CitizensAdvice.iOS\CitizensAdvice.iOS.csproj", "{0AC89E21-F1E6-4F65-B7A0-2E1306843673}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CitizensAdvice", "CitizensAdvice\CitizensAdvice\CitizensAdvice.csproj", "{0F244C95-DAF7-467B-8DCF-43A86D68423A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CitizensAdvice", "CitizensAdvice\CitizensAdvice\CitizensAdvice.csproj", "{0F244C95-DAF7-467B-8DCF-43A86D68423A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
