@@ -135,7 +135,7 @@ namespace CitizensAdvice.ViewModels
 
                             string initialSubString = areaKeywordTitleCase.Substring(0, index);
                             string queryString = areaKeywordTitleCase.Substring(index, query.Length);
-                            string finalSubString = String.Empty;
+                            string finalSubString = string.Empty;
 
                             if ((index + query.Length) < areaKeywordLower.Length)
                             {
