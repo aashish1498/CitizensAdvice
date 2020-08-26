@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.ObjectModel;
-using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
 using Xamarin.Essentials;
@@ -20,6 +19,18 @@ namespace CitizensAdvice.Models
         public string ContactNumber { get; set; }
         public string EmailAddress { get; set; }
         public string Website { get; set; }
+        public string EmailUrl { get; set; }
+
+        /// <summary>
+        /// Details for an agency which provides advice.
+        /// </summary>
+        /// <param name="position">The physical location of the area</param>
+        /// <param name="address">The displayed address</param>
+        /// <param name="label">The name of the agency</param>
+        /// <param name="imagePath">The location of the icon image</param>
+        /// <param name="contactInformation">The contact details</param>
+        /// <param name="branchOpeningTimes">A collection of opening times</param>
+        /// <param name="callOpeningTimes">A collection of closing times</param>
         public Place(Position position, string address, string label, string imagePath, ContactInformation contactInformation, ObservableCollection<OpeningTimes> branchOpeningTimes, ObservableCollection<OpeningTimes> callOpeningTimes)
         {
             Position = position;
@@ -31,6 +42,7 @@ namespace CitizensAdvice.Models
 
             ContactNumber = contactInformation.ContactNumber;
             EmailAddress = contactInformation.EmailAddress;
+            EmailUrl = contactInformation.EmailAddressUrl;
             Website = contactInformation.Website;
 
             ImageSource = ImageSource.FromResource(imagePath);
@@ -39,6 +51,7 @@ namespace CitizensAdvice.Models
 
             AddressFormatted = Address.Replace(',', '\n');
         }
+
 
         private async void CreateDistanceString()
         {

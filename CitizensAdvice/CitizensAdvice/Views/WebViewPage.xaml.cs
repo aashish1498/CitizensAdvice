@@ -17,6 +17,15 @@ namespace CitizensAdvice.Views
             ((NavigationPage)Application.Current.MainPage).BarTextColor = Color.White;
         }
 
+        public WebViewPage(Place place)
+        {
+            InitializeComponent();
+            BindingContext = new WebViewViewModel(place);
+            Title = place.Label + " email form";
+            ((NavigationPage)Application.Current.MainPage).BarBackgroundColor = (Color)Application.Current.Resources["PrimaryColor"];
+            ((NavigationPage)Application.Current.MainPage).BarTextColor = Color.White;
+        }
+
         private void WebView1_OnNavigated(object sender, WebNavigatedEventArgs e)
         {
             var vm = BindingContext as WebViewViewModel;

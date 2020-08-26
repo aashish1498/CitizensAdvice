@@ -11,13 +11,11 @@ namespace CitizensAdvice.ViewModels
 
         public ObservableCollection<Place> Places { get; set; }
 
-
         public AgenciesListViewModel(AdviceArea area)
         {
             Area = area;
             Places = area.Places;
         }
-
 
         public Command<Place> DisplayAgencyDetails
         {

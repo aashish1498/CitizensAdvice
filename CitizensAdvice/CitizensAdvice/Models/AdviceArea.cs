@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Text;
 using CitizensAdvice.StaticClasses;
 using Xamarin.Forms;
 
@@ -18,6 +16,10 @@ namespace CitizensAdvice.Models
 
         public bool IsKeywordVisible => !string.IsNullOrEmpty(KeywordFormatted.ToString());
 
+        /// <summary>
+        /// Copy values from an existing instance of the Advice Area
+        /// </summary>
+        /// <param name="previousAdviceArea"></param>
         public AdviceArea(AdviceArea previousAdviceArea)
         {
             AreaName = previousAdviceArea.AreaName;
@@ -28,6 +30,13 @@ namespace CitizensAdvice.Models
             KeywordFormatted = previousAdviceArea.KeywordFormatted;
         }
 
+        /// <summary>
+        /// Create an area of Advice provided by CAR
+        /// </summary>
+        /// <param name="name">Name of the Advice Area e.g. 'Benefits'</param>
+        /// <param name="areaUrl">The website URL corresponding to the Advice Area</param>
+        /// <param name="containsPrefix">If false, the prefix 'https://www.citizensadvice.org.uk/' will be added to the areaUrl parameter</param>
+        /// <param name="keywords">A list of searchable keywords that will direct to the Advice Area</param>
         public AdviceArea(string name, string areaUrl, bool containsPrefix, List<string> keywords = null)
         {
             AreaName = name;

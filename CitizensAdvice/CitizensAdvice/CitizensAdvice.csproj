@@ -3,6 +3,9 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+    <Company>Citizens Advice Redbridge</Company>
+    <Product>Citizens Advice Redbridge</Product>
+    <Authors>Aashish Mehta</Authors>
   </PropertyGroup>
 
   <ItemGroup>

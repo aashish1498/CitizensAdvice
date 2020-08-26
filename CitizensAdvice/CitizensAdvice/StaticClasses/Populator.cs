@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using CitizensAdvice.Models;
 using Xamarin.Forms.Maps;
@@ -9,17 +8,16 @@ namespace CitizensAdvice.StaticClasses
 {
     public static class Populator
     {
-        public static Position DefaultPosition = new Position(51.558010, 0.075367); // Ilford Library
-
         public static Place PopulateCitizensAdvicePlace()
         {
-            //TODO change this to actual email address
+            var citizensAdviceLocation = new Position(51.558010, 0.075367); // Ilford Library
 
             var contactInfo = new ContactInformation(
-                "03003309063",
-                "aashish.mehta@citizensadviceredbridge.org.uk",
-                "http://www.citizensadviceredbridge.org.uk/"
-            );
+                    "03003309063",
+                    "feedback@citizensadviceredbridge.org.uk",
+                    "http://www.citizensadviceredbridge.org.uk/",
+                    "https://www.citizensadviceredbridge.org.uk/ask-for-advice/"
+                );
 
             var branchOpeningTimes = new ObservableCollection<OpeningTimes>
             {
@@ -35,7 +33,7 @@ namespace CitizensAdvice.StaticClasses
             var callOpeningTimes = branchOpeningTimes;
 
             var place = new Place(
-                DefaultPosition,
+                citizensAdviceLocation,
                 "Central Library, Clements Rd, Ilford,\nIG1 1EA",
                 "Citizens Advice Redbridge",
                 "CitizensAdvice.Images.MainPageLogo.png",
@@ -50,8 +48,8 @@ namespace CitizensAdvice.StaticClasses
         public static ObservableCollection<AdviceArea> PopulateAdviceAreas()
         {
 
-            //TODO change to a dictionary of strings to add URL (or something else idk I don't have a degree in computer science
-            
+            //TODO Consider changing to a dictionary of strings to add URL
+
 
             var adviceAreas = new ObservableCollection<AdviceArea>()
             {

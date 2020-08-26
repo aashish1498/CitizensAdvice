@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using CitizensAdvice.Models;
+using CitizensAdvice.Views;
 using Xamarin.Forms;
 using Xamarin.Essentials;
 
@@ -61,9 +62,9 @@ namespace CitizensAdvice.ViewModels
             Launcher.TryOpenAsync(Website);
         }
 
-        void SendEmail()
+        async void SendEmail()
         {
-            //TODO Populate this
+            await Application.Current.MainPage.Navigation.PushAsync(new WebViewPage(Agency));
         }
 
     }
