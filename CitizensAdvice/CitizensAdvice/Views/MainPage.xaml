@@ -5,13 +5,14 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              xmlns:local="clr-namespace:CitizensAdvice;assembly=CitizensAdvice"
+             xmlns:helpers="clr-namespace:CitizensAdvice.Helpers;assembly=CitizensAdvice"
              x:Class="CitizensAdvice.Views.MainPage"
              NavigationPage.HasNavigationBar="false">
 
     <ListView ItemsSource="{Binding AdviceAreas}" SeparatorVisibility="None" HasUnevenRows="True" ItemTapped="ListView_OnItemTapped">
         <ListView.Header>
             <StackLayout>
-                <Image x:Name="mainLogo"  Source="{local:ImageResource CitizensAdvice.Images.MainPageLogo.png}" Aspect="AspectFit" Margin="50, 20, 50, 0" AnchorX="0" AnchorY="0" HorizontalOptions="StartAndExpand" HeightRequest="150"></Image>
+                <Image x:Name="mainLogo"  Source="{helpers:ImageResource CitizensAdvice.Images.MainPageLogo.png}" Aspect="AspectFit" Margin="50, 20, 50, 0" AnchorX="0" AnchorY="0" HorizontalOptions="StartAndExpand" HeightRequest="150"></Image>
                 <SearchBar x:Name="SearchBar" Placeholder="Search for a keyword" SearchCommand="{Binding PerformSearch}" SearchCommandParameter="{Binding Text, Source={x:Reference SearchBar}}" TextChanged="SearchBarTextChanged"/>
                 <Label Text="Select a help topic below"
                        TextColor="{StaticResource PrimaryColor}"

@@ -8,6 +8,13 @@
     <ContentPage.Content>
 
         <StackLayout>
+            <Label Text="Loading page ..."
+                   TextColor="{StaticResource PrimaryColor}"
+                   FontSize="Title"
+                   HorizontalOptions="CenterAndExpand"
+                   Margin="20"
+                   x:Name="LoadingPage"/>
+            <ActivityIndicator x:Name="MyActivityIndicator" IsRunning="True" />
             <WebView x:Name="WebView1"  Source="{Binding Url}" HeightRequest="1000" WidthRequest="1000" Navigated="WebView1_OnNavigated"/>
             <Grid Margin="10" VerticalOptions="StartAndExpand">
                 <Grid.ColumnDefinitions>

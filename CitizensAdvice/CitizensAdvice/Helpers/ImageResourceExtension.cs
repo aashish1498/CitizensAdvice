@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Reflection;
-using System.Text;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace CitizensAdvice
+namespace CitizensAdvice.Helpers
 {
     [ContentProperty(nameof(Source))]
     class ImageResourceExtension : IMarkupExtension

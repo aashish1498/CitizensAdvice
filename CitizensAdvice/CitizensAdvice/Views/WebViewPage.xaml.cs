@@ -30,6 +30,9 @@ namespace CitizensAdvice.Views
         {
             var vm = BindingContext as WebViewViewModel;
             vm.MyWebView = sender as WebView;
+            LoadingPage.IsVisible = false;
+            MyActivityIndicator.IsRunning = false;
+            MyActivityIndicator.IsVisible = false;
         }
     }
 }
