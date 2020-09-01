@@ -30,7 +30,7 @@ jobs:
         ls
         nuget restore CitizensAdvice.sln
         echo Nuget Restored
-        cd ..
+        cd CitizensAdvice
         cd CitizensAdvice.Android
         echo Switched directory to CitizensAdvice.Android
         msbuild CitizensAdvice.Android.csproj /verbosity:normal /t:Rebuild /p:Configuration=Debug
@@ -41,6 +41,5 @@ jobs:
     - uses: actions/checkout@v1
     - name: iOS
       run: |
-        cd CitizensAdvice
-        nuget restore
+        nuget restore CitizensAdvice.sln
         msbuild CitizensAdvice.iOS/CitizensAdvice.iOS.csproj /verbosity:normal /t:Rebuild /p:Platform=iPhoneSimulator /p:Configuration=Debug
