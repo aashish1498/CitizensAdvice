@@ -29,7 +29,8 @@ jobs:
       run: |
         cd CitizensAdvice
         echo Switched directory to CitizensAdvice
-        nuget restore
+        ls
+        nuget restore CitizensAdvice.sln
         echo Nuget Restored
         cd CitizensAdvice.Android
         echo Switched directory to CitizensAdvice.Android
