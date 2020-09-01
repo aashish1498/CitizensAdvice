@@ -28,7 +28,6 @@ jobs:
     - name: Android
       run: |
         cd CitizensAdvice
-        nuget restore
         cd CitizensAdvice.Android
         msbuild CitizensAdvice.Android.csproj /verbosity:normal /t:Rebuild /p:Configuration=Debug
         
