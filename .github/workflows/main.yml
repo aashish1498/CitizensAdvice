@@ -27,8 +27,6 @@ jobs:
     - uses: actions/checkout@v1
     - name: Android
       run: |
-        cd CitizensAdvice
-        echo Switched directory to CitizensAdvice/CitizensAdvice
         ls
         nuget restore CitizensAdvice.sln
         echo Nuget Restored
