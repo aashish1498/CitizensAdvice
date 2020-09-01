@@ -42,4 +42,5 @@ jobs:
     - name: iOS
       run: |
         nuget restore CitizensAdvice.sln
+        cd CitizensAdvice
         msbuild CitizensAdvice.iOS/CitizensAdvice.iOS.csproj /verbosity:normal /t:Rebuild /p:Platform=iPhoneSimulator /p:Configuration=Debug
