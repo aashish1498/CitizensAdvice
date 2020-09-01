@@ -28,10 +28,11 @@ jobs:
     - name: Android
       run: |
         cd CitizensAdvice
-        echo Switched directory to CitizensAdvice
+        echo Switched directory to CitizensAdvice/CitizensAdvice
         ls
-        nuget restore CitizensAdvice/CitizensAdvice.sln
+        nuget restore CitizensAdvice.sln
         echo Nuget Restored
+        cd ..
         cd CitizensAdvice.Android
         echo Switched directory to CitizensAdvice.Android
         msbuild CitizensAdvice.Android.csproj /verbosity:normal /t:Rebuild /p:Configuration=Debug
