@@ -29,8 +29,13 @@ namespace CitizensAdvice.ViewModels
         private AdviceArea _oldArea;
 
         public ObservableCollection<AdviceArea> AdviceAreas { get; set; }
+
+        public Command AboutUsClicked { get; set; }
+
         public MainViewModel()
         {
+            AboutUsClicked = new Command(AboutUs);
+
             AdviceAreas = new ObservableCollection<AdviceArea>();
 
             foreach (var adviceArea in Database.AdviceAreas)
@@ -176,12 +181,16 @@ namespace CitizensAdvice.ViewModels
             }
         }
 
-
         void OnSearchExited()
         {
             AdviceAreas.Clear();
             _oldArea = null;
             foreach (var adviceArea in Database.AdviceAreas) AdviceAreas.Add(new AdviceArea(adviceArea));
+        }
+
+        async void AboutUs()
+        {
+            await Application.Current.MainPage.Navigation.PushAsync(new AboutUsPage());
         }
     }
 }

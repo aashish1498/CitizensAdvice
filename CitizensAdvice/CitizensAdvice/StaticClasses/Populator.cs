@@ -14,7 +14,7 @@ namespace CitizensAdvice.StaticClasses
 
             var contactInfo = new ContactInformation(
                     "03003309063",
-                    "feedback@citizensadviceredbridge.org.uk",
+                    "advice@citizensadviceredbridge.org.uk",
                     "http://www.citizensadviceredbridge.org.uk/",
                     "https://www.citizensadviceredbridge.org.uk/ask-for-advice/"
                 );

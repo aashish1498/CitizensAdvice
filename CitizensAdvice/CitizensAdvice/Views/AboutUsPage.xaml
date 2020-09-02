@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:local="clr-namespace:CitizensAdvice;assembly=CitizensAdvice"
+             x:Class="CitizensAdvice.Views.AboutUsPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Image Source="{Binding MyImageSource}" HeightRequest="100" Margin="20"/>
+            <Label Text="{Binding AboutUsDetails}" Style="{StaticResource LabelDefaultText}" Margin="10"/>
+            <Label Text="{Binding CoronavirusText}" Style="{StaticResource LabelDefaultText}" Margin="10"/>
+
+            <Label Style="{StaticResource LabelDefaultText}" Margin="0, 0, 0, 10" TextDecorations="Underline" TextColor="DodgerBlue">
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="{Binding Website}">
+                        <Span.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding WebsiteLaunchCommand}"></TapGestureRecognizer>
+                        </Span.GestureRecognizers>
+                    </Span>
+                </FormattedString>
+            </Label.FormattedText>
+            </Label>
+
+            <Button Text="{Binding CallText}" Command="{Binding CallNumberCommand}" Margin="20, 20, 20, 0" FontSize="Caption"/>
+
+            <Button Text="{Binding EmailText}" Command="{Binding SendEmailCommand}" Margin="20, 20, 20, 20" FontSize="Caption"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

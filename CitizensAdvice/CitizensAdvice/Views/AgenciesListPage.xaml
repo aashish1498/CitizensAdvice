@@ -27,19 +27,11 @@
                                                    HorizontalOptions="CenterAndExpand"
                                                    FontSize="Large"/>
                                         </Grid>
-                                        <StackLayout Orientation="Horizontal">
-                                            <Label Style="{StaticResource LabelDefaultText}" 
-                                                   Text="{Binding Address}"
-                                                   Margin="0,20,0,0"
-                                                   WidthRequest="150"
-                                                   HorizontalOptions="FillAndExpand"/>
-                                            <Label Style="{StaticResource LabelDefaultText}" 
-                                                   Text="{Binding DistanceString}"
-                                                   HorizontalOptions="Fill"
-                                                   VerticalOptions="Center"
-                                                   Margin="0,20,0,0"/>
-                                        </StackLayout>
-
+                                        <Label Style="{StaticResource LabelDefaultText}" 
+                                               Text="{Binding DistanceString}"
+                                               HorizontalOptions="Fill"
+                                               VerticalOptions="Center"
+                                               Margin="0,20,0,0"/>
                                     </StackLayout>
                                 </Frame>
                             </ViewCell.View>
