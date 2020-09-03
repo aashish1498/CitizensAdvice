@@ -71,7 +71,15 @@ namespace CitizensAdvice.ViewModels
 
         async void SendEmail()
         {
-            Device.OpenUri(new Uri($"mailto:{Agency.EmailAddress}"));
+            try
+            {
+                await Launcher.OpenAsync(new Uri($"mailto:{Agency.EmailAddress}"));
+            }
+            catch (Exception e)
+            {
+                await Application.Current.MainPage.DisplayAlert("Could not open email app",
+                    "Unable to start an email application", "OK");
+            }
         }
     }
 }

@@ -38,7 +38,7 @@
 
                 <Button Text="{Binding CallText}" Command="{Binding CallNumberCommand}" Margin="20, 20, 20, 0" />
 
-                <Button Text="Send an email" Command="{Binding SendEmailCommand}" Margin="20, 20, 20, 20"/>
+                <Button Text="Get email advice" Command="{Binding SendEmailCommand}" Margin="20, 20, 20, 20"/>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
