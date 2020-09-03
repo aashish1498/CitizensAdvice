@@ -21,8 +21,11 @@
                     <ColumnDefinition />
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
-                <Button Grid.Column="0" Text="Back" HeightRequest ="80" Command="{Binding GoBackCommand}"/>
-                <Button Grid.Column="1" Text="Forward" HeightRequest="80" Command="{Binding GoForwardCommand}" />
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Button Grid.Column="0" Text="Back" HeightRequest ="40" Command="{Binding GoBackCommand}"/>
+                <Button Grid.Column="1" Text="Forward" HeightRequest="40" Command="{Binding GoForwardCommand}" />
             </Grid>
         </StackLayout>
     </ContentPage.Content>
