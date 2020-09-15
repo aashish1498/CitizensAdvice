@@ -77,7 +77,7 @@ namespace CitizensAdvice.Models
             }
             catch
             {
-                DistanceString = string.Empty;
+                DistanceString = "Cannot determine distance";
             }
 
         }

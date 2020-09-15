@@ -27,11 +27,22 @@
                                                    HorizontalOptions="CenterAndExpand"
                                                    FontSize="Large"/>
                                         </Grid>
-                                        <Label Style="{StaticResource LabelDefaultText}" 
-                                               Text="{Binding DistanceString}"
-                                               HorizontalOptions="Fill"
-                                               VerticalOptions="Center"
-                                               Margin="0,20,0,0"/>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+                                            <Label Style="{StaticResource LabelDefaultText}" 
+                                                   Text="{Binding ContactNumber}"
+                                                   Margin="0,20,0,0"
+                                                   HorizontalOptions="CenterAndExpand"
+                                                   VerticalOptions="Center"/>
+                                            <Label Style="{StaticResource LabelDefaultText}" 
+                                                   Text="{Binding DistanceString}"
+                                                   HorizontalOptions="CenterAndExpand"
+                                                   Grid.Column="1"
+                                                   Margin="0,20,0,0"/>
+                                        </Grid>
                                     </StackLayout>
                                 </Frame>
                             </ViewCell.View>
